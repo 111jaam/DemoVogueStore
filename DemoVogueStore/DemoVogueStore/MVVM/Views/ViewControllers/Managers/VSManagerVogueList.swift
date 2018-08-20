@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class VSManagerVogueList{
     
+    // creating static instance 
     static let sharedInstance = VSManagerVogueList()
     var delegateManager: VSManagerVogueListProtocol?
     
