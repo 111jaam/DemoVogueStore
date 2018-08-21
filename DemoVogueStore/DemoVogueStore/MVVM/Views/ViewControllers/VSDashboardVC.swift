@@ -55,16 +55,8 @@ class VSDashboardVC: UIViewController {
         
         setUpCollectionView()
         
-        let strPoints = "1 new offer."
-        let strTitle = NSMutableAttributedString(string: "Offers\n" + strPoints)
-        
-        if let font1 = UIFont(name: "HelveticaNeue-Medium", size: 16), let font2 = UIFont(name: "HelveticaNeue-Light", size: 14){
-            strTitle.addAttribute(NSAttributedString.Key.font, value: font1, range: NSMakeRange(0, 7))
-            strTitle.addAttribute(NSAttributedString.Key.font, value: font2, range: NSMakeRange(7, strPoints.count))
-        }
-        
-        self.btnOffers.setAttributedTitle(strTitle, for: .normal)
-    
+        self.btnOffers.setAttributedTitle(arrayModelVogueDashboard[0].user_Offers, for: .normal)
+            
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "imgSmallLogoVogue")
@@ -107,17 +99,8 @@ class VSDashboardVC: UIViewController {
     
     //updating collectionview values
     func updateCollectionViewDataSource() {
-        
-        let count = arrayModelVogueDashboard[0].user_loyaltyPoints
-        let strPoints = count! + "pts."
-        let strTitle = NSMutableAttributedString(string: "Loyalty\n" + strPoints)
-        
-        if let font1 = UIFont(name: "HelveticaNeue-Medium", size: 16), let font2 = UIFont(name: "HelveticaNeue-Light", size: 14){
-            strTitle.addAttribute(NSAttributedString.Key.font, value: font1, range: NSMakeRange(0, 7))
-            strTitle.addAttribute(NSAttributedString.Key.font, value: font2, range: NSMakeRange(7, strPoints.count))
-        }
-        
-        self.btnLoyalty.setAttributedTitle(strTitle, for: .normal)
+  
+        self.btnLoyalty.setAttributedTitle(arrayModelVogueDashboard[0].user_loyaltyPoints, for: .normal)
         
         UIView.animate(withDuration: 0.1, delay: 0.5, options: .curveEaseOut, animations: {
             self.collectViewProducts.alpha = 0.1

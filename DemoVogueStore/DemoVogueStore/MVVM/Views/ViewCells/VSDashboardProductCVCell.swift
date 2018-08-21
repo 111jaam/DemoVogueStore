@@ -23,26 +23,20 @@ class VSDashboardProductCVCell: UICollectionViewCell {
         
         //Based on types swtiching the view types
         if viewModel.type! == 2{// type fashion shows
+            
             viewDetails.isHidden = false
-            
-            let details = "Fashion Show"
-            let subDetails = viewModel.details
-            let strTitle = NSMutableAttributedString(string: details + "\n" + subDetails!)
-            
-            if let font1 = UIFont(name: "HelveticaNeue-Medium", size: 16), let font2 = UIFont(name: "HelveticaNeue-Light", size: 14){
-                strTitle.addAttribute(NSAttributedString.Key.font, value: font1, range: NSMakeRange(0, details.count))
-                strTitle.addAttribute(NSAttributedString.Key.font, value: font2, range: NSMakeRange(details.count, subDetails!.count+1))
-            }
             lblSubDetails.numberOfLines = 2
-            lblSubDetails.attributedText = strTitle
+            lblSubDetails.attributedText = viewModel.details
             btnDetailAction.setTitle("Get Tickets", for: .normal)
         }
         else if viewModel.type! == 3 { // type personal shopper
+            
             viewDetails.isHidden = false
             lblSubDetails.text = "Personal Shopper"
             btnDetailAction.setTitle("Book Now", for: .normal)
         }
         else{// type normal product
+            
             viewDetails.isHidden = true
         }
     }

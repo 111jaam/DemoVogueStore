@@ -20,6 +20,7 @@ class VSModelVogue {
     var details : String?
     var price : String?
     var displayName : String?
+    var user_Offers : Int?
     var user_loyaltyPoints : String?
     var is_Dashoboard : Bool?
     var is_Featured : Bool?
@@ -37,6 +38,7 @@ class VSModelVogue {
         self.details = obj!["details"].string
         self.price = obj!["price"].string
         self.displayName = obj!["displayName"].string
+        self.user_Offers = obj!["user_offers"].int
         self.user_loyaltyPoints = obj!["user_loyaltyPoints"].string
         self.is_Dashoboard = obj!["is_Dashoboard"].bool
         self.is_Featured = obj!["is_Featured"].bool
